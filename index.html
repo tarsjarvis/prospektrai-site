@@ -360,6 +360,82 @@
     </div>
   </footer>
 
+  <!-- ░░ CHAT WIDGET ░░ -->
+  <div id="chat-widget">
+
+    <!-- Bubble Trigger -->
+    <div id="chat-bubble" onclick="toggleChat()" aria-label="Open chat">
+      <div id="bubble-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+      </div>
+      <div id="bubble-close" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </div>
+      <div id="notification-dot"></div>
+    </div>
+
+    <!-- Proactive Teaser (shows before opening) -->
+    <div id="chat-teaser" onclick="toggleChat()">
+      <span>👋 Did you know the average roofer loses $2,500/week in missed calls?</span>
+      <button id="teaser-close" onclick="closeTeaser(event)">×</button>
+    </div>
+
+    <!-- Chat Panel -->
+    <div id="chat-panel">
+
+      <!-- Header -->
+      <div id="chat-header">
+        <div id="header-left">
+          <div id="avatar">V</div>
+          <div id="header-info">
+            <div id="header-name">Vicki — ProspektrAI</div>
+            <div id="header-status"><span class="status-dot"></span>Online now</div>
+          </div>
+        </div>
+        <button id="header-close" onclick="toggleChat()" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Messages -->
+      <div id="chat-messages"></div>
+
+      <!-- Success Overlay -->
+      <div id="success-overlay">
+        <div id="success-content">
+          <div id="success-check">
+            <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="25" fill="none"/><path fill="none" d="M14 27l8 8 16-16"/></svg>
+          </div>
+          <h3>You're locked in! 🔥</h3>
+          <p>Vicki has your info. We'll reach out within 24 hours with a custom demo.</p>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div id="chat-input-area">
+        <input
+          id="chat-input"
+          type="text"
+          placeholder="Type a message..."
+          autocomplete="off"
+          onkeydown="handleKey(event)"
+        />
+        <button id="send-btn" onclick="sendMessage()" aria-label="Send">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
