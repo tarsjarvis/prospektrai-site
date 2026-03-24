@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stop losing $12,000/month to voicemail. ProspektrAI deploys a 24/7 AI Office Manager for contractors." />
+  <title>ProspektrAI — Stop Losing Jobs to Voicemail</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .op-hero { padding: 80px 0 60px; text-align: center; }
+    .op-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+    .op-hero p { font-size: 1.15rem; color: var(--text-dim); max-width: 560px; margin: 0 auto 36px; }
+
+    .op-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-bottom: 64px; }
+    .op-stat { text-align: center; }
+    .op-stat-num { display: block; font-size: 2.4rem; font-weight: 800; background: linear-gradient(135deg, var(--blue-light), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .op-stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+
+    .op-section { padding: 48px 0; border-top: 1px solid var(--border); }
+    .op-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; }
+
+    .op-problem { background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 48px; }
+    .op-problem h2 { color: #f87171; }
+    .op-problem ul { display: flex; flex-direction: column; gap: 12px; }
+    .op-problem li { display: flex; align-items: flex-start; gap: 12px; color: var(--text-dim); font-size: 1rem; }
+    .op-problem li::before { content: "→"; color: #f87171; flex-shrink: 0; font-weight: 700; }
+
+    .op-how { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 24px; }
+    .op-step { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+    .op-step-num { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.3); border-radius: 50%; font-size: 0.85rem; font-weight: 700; color: var(--blue-light); margin-bottom: 16px; }
+    .op-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .op-step p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; }
+
+    .op-proof { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; margin-top: 24px; }
+    .op-proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 24px; }
+    .op-proof-item { text-align: center; padding: 20px; background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); }
+    .op-proof-item strong { display: block; font-size: 1.6rem; font-weight: 800; color: var(--cyan); margin-bottom: 6px; }
+    .op-proof-item span { font-size: 0.82rem; color: var(--text-muted); }
+
+    .op-pricing { margin-top: 24px; }
+    .op-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .op-plan { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; position: relative; }
+    .op-plan.featured { border-color: var(--blue); box-shadow: 0 0 32px rgba(37,99,235,0.2); }
+    .op-plan-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--blue); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 14px; border-radius: 99px; white-space: nowrap; }
+    .op-plan-name { font-size: 1rem; font-weight: 700; color: var(--text-dim); margin-bottom: 8px; }
+    .op-plan-price { font-size: 2rem; font-weight: 800; margin-bottom: 4px; }
+    .op-plan-price span { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
+    .op-plan-setup { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 20px; }
+    .op-plan-features { display: flex; flex-direction: column; gap: 10px; }
+    .op-plan-features li { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--text-dim); }
+    .op-plan-features li i { color: var(--cyan); flex-shrink: 0; width: 15px; height: 15px; }
+
+    .op-cta { text-align: center; padding: 60px 0 80px; }
+    .op-cta h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 16px; }
+    .op-cta p { color: var(--text-dim); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .op-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .op-nav { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+    .op-nav-logo { font-size: 1.2rem; font-weight: 800; }
+    .op-nav-logo span { color: var(--blue-light); }
+
+    .quote { font-style: italic; color: var(--text-dim); border-left: 3px solid var(--blue); padding-left: 16px; margin: 24px 0; line-height: 1.7; }
+
+    @media (max-width: 600px) {
+      .op-stats { gap: 28px; }
+      .op-cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container op-nav">
+      <a href="/" class="op-nav-logo">Prospektr<span>AI</span></a>
+      <a href="#audit" class="btn btn-primary">Get Free Audit</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="op-hero">
+      <div class="hero-badge" style="margin: 0 auto 24px;">
+        <span class="pulse-dot"></span>
+        AI Office Manager — Live 24/7
+      </div>
+      <h1>You're Losing <span class="text-gradient">$12,000/Month</span><br>to Voicemail.</h1>
+      <p>While you're on a job site, leads are calling. When no one answers, they call your competitor. ProspektrAI fixes that — without adding staff.</p>
+      <a href="#audit" class="btn btn-primary btn-lg">
+        <i data-lucide="zap"></i>
+        Get My Free Lead Audit
+      </a>
+    </div>
+
+    <!-- STATS -->
+    <div class="op-stats">
+      <div class="op-stat">
+        <span class="op-stat-num">$12K</span>
+        <span class="op-stat-label">Lost per month (avg contractor)</span>
+      </div>
+      <div class="op-stat">
+        <span class="op-stat-num">94%</span>
+        <span class="op-stat-label">Leads answered instantly</span>
+      </div>
+      <div class="op-stat">
+        <span class="op-stat-num">3×</span>
+        <span class="op-stat-label">More booked estimates</span>
+      </div>
+      <div class="op-stat">
+        <span class="op-stat-num">40%</span>
+        <span class="op-stat-label">Of estimates abandoned without follow-up</span>
+      </div>
+    </div>
+
+    <!-- PROBLEM -->
+    <div class="op-problem">
+      <h2>The Problem No One Talks About</h2>
+      <ul>
+        <li>Leads expect a response in under 5 minutes — voicemail loses them instantly</li>
+        <li>You can't answer calls while you're on a roof, under a sink, or in a crawlspace</li>
+        <li>Hiring a receptionist costs $3,000–$5,000/month and they work 9–5</li>
+        <li>40% of open estimates never get followed up — those jobs go to whoever follows up first</li>
+      </ul>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="op-section">
+      <h2>How ProspektrAI Works</h2>
+      <div class="op-how">
+        <div class="op-step">
+          <div class="op-step-num">1</div>
+          <h3>We Deploy in Under a Week</h3>
+          <p>Full setup, voice training, and CRM integration. No tech skills needed from you — we handle everything.</p>
+        </div>
+        <div class="op-step">
+          <div class="op-step-num">2</div>
+          <h3>It Answers Every Missed Call</h3>
+          <p>Your AI office manager qualifies the lead — budget, timeline, job type — and books the estimate directly to your calendar.</p>
+        </div>
+        <div class="op-step">
+          <div class="op-step-num">3</div>
+          <h3>You Show Up to Close</h3>
+          <p>Every estimate on your calendar is pre-qualified. No chasing, no cold callbacks — just ready-to-buy leads.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROOF -->
+    <div class="op-section">
+      <h2>What the Numbers Show</h2>
+      <div class="op-proof">
+        <blockquote class="quote">"We went from missing 6–8 calls a day to booking 3× more estimates in the first month."</blockquote>
+        <div class="op-proof-grid">
+          <div class="op-proof-item">
+            <strong>3×</strong>
+            <span>More booked estimates for ProspektrAI clients</span>
+          </div>
+          <div class="op-proof-item">
+            <strong>94%</strong>
+            <span>Of leads answered within seconds</span>
+          </div>
+          <div class="op-proof-item">
+            <strong>20%+</strong>
+            <span>Reply rates on AI-assisted contractor outreach (InfoTech Research)</span>
+          </div>
+          <div class="op-proof-item">
+            <strong>1.3×</strong>
+            <span>More likely to see revenue growth vs. contractors not using AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <div class="op-section" id="pricing">
+      <h2>Plans & Pricing</h2>
+      <p style="color: var(--text-muted); margin-bottom: 32px;">All plans include full setup and deployment. No hidden fees.</p>
+      <div class="op-plans">
+
+        <div class="op-plan">
+          <div class="op-plan-name">Missed Call Recovery</div>
+          <div class="op-plan-price">$299.99 <span>/ mo</span></div>
+          <div class="op-plan-setup">+ $499 setup · Best for under $25K/mo revenue</div>
+          <ul class="op-plan-features">
+            <li><i data-lucide="check"></i> SMS lead response</li>
+            <li><i data-lucide="check"></i> Lead qualification</li>
+            <li><i data-lucide="check"></i> Weekly reports</li>
+            <li><i data-lucide="check"></i> Full setup included</li>
+          </ul>
+        </div>
+
+        <div class="op-plan featured">
+          <div class="op-plan-badge">Most Popular</div>
+          <div class="op-plan-name">24/7 Digital Dispatch</div>
+          <div class="op-plan-price">$599.99 <span>/ mo</span></div>
+          <div class="op-plan-setup">+ $999 setup · Best for $25K–$75K/mo revenue</div>
+          <ul class="op-plan-features">
+            <li><i data-lucide="check"></i> Everything in Missed Call Recovery</li>
+            <li><i data-lucide="check"></i> CRM + calendar sync</li>
+            <li><i data-lucide="check"></i> Custom voice training</li>
+            <li><i data-lucide="check"></i> Priority support</li>
+          </ul>
+        </div>
+
+        <div class="op-plan">
+          <div class="op-plan-name">Automated Quote Follow-Up</div>
+          <div class="op-plan-price">$999.99 <span>/ mo</span></div>
+          <div class="op-plan-setup">+ $1,499 setup · Best for $75K–$150K+/mo revenue</div>
+          <ul class="op-plan-features">
+            <li><i data-lucide="check"></i> Everything in Digital Dispatch</li>
+            <li><i data-lucide="check"></i> Email + SMS follow-up sequences</li>
+            <li><i data-lucide="check"></i> Database ingestion</li>
+            <li><i data-lucide="check"></i> Dedicated account manager</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="op-cta" id="audit">
+      <h2>Not sure which plan fits?</h2>
+      <p>We'll audit your current call volume, estimate exactly how many leads you're losing each month, and show you the ROI before you spend a dollar.</p>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 28px;">No obligation. Takes 15 minutes.</p>
+      <div class="op-cta-buttons">
+        <a href="/#contact" class="btn btn-primary btn-lg">
+          <i data-lucide="calendar"></i>
+          Book My Free Audit
+        </a>
+        <a href="/" class="btn btn-ghost btn-lg">
+          Learn More <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+      <p style="margin-top: 32px; color: var(--text-muted); font-size: 0.88rem;">
+        Questions? Reply directly to Vicki's email — she'll get back to you same day.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
