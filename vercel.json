@@ -1,6 +1,10 @@
 {
   "rewrites": [
     { "source": "/onepager", "destination": "/onepager.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/hvac",       "destination": "/hvac.html" },
+    { "source": "/roofing",    "destination": "/roofing.html" },
+    { "source": "/plumbing",   "destination": "/plumbing.html" },
+    { "source": "/electrical", "destination": "/electrical.html" },
+    { "source": "/(.*)",       "destination": "/index.html" }
   ]
 }
