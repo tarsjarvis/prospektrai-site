@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initROICalc();
   initForm();
-  initFAQ();
   loadFromStorage();
 
   if (chatState.messages.length > 0) {
@@ -95,12 +94,6 @@ function updateSliderFill(slider, val, min, max) {
 }
 
 // ─── FAQ ───────────────────────────────────────
-function initFAQ() {
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => toggleFaq(q));
-  });
-}
-
 window.toggleFaq = function (el) {
   const item = el.closest('.faq-item');
   const isOpen = item.classList.contains('open');
