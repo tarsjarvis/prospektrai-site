@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ProspektrAI deploys a 24/7 AI Office Manager for contractors. Stop missing calls. Start closing jobs." />
-  <title>ProspektrAI — AI Automation for Contractors</title>
+  <meta name="description" content="ProspektrAI deploys Vicki — a 24/7 AI Office Manager for contractors. Stop missing calls. Start closing jobs." />
+  <title>ProspektrAI — AI Office Manager for Contractors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -15,153 +18,235 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">Prospektr<span>AI</span></a>
       <ul class="nav-links">
-        <li><a href="#engine">The Engine</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#meet-vicki">Meet Vicki</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#services">Pricing</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="btn btn-primary nav-cta">Get Free Audit</a>
+      <a href="#founding" class="btn btn-primary nav-cta">Claim Founding Spot</a>
       <button class="nav-hamburger" id="hamburger" aria-label="Menu">
         <i data-lucide="menu"></i>
       </button>
     </div>
     <div class="nav-mobile" id="nav-mobile">
-      <a href="#engine" onclick="closeMobile()">The Engine</a>
-      <a href="#services" onclick="closeMobile()">Services</a>
-      <a href="#contact" onclick="closeMobile()">Contact</a>
-      <a href="#contact" class="btn btn-primary" onclick="closeMobile()">Get Free Audit</a>
+      <a href="#meet-vicki"   onclick="closeMobile()">Meet Vicki</a>
+      <a href="#how-it-works" onclick="closeMobile()">How It Works</a>
+      <a href="#services"     onclick="closeMobile()">Pricing</a>
+      <a href="#contact"      onclick="closeMobile()">Contact</a>
+      <a href="#founding" class="btn btn-primary" onclick="closeMobile()">Claim Founding Spot</a>
     </div>
   </nav>
 
   <!-- ░░ HERO ░░ -->
   <section id="hero">
-    <div class="hero-grid-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
     <div class="container hero-inner">
       <div class="hero-badge">
         <span class="pulse-dot"></span>
-        AI Systems — Live 24/7
+        Vicki is live — answering calls right now
       </div>
       <h1 class="hero-headline">
-        Missing a Call is a<br>
-        <span class="text-gradient">$12,000 Mistake.</span>
+        You're On the Roof.<br>
+        Your Next Job Is<br>
+        <span class="text-gradient">Going to Voicemail.</span>
       </h1>
       <p class="hero-sub">
-        You aren't losing the bid — you're losing the chance to compete.<br>
-        Deploy a 24/7 AI Office Manager today.
+        Vicki — your AI Office Manager — answers every missed call within seconds, qualifies every lead, and books estimates to your calendar. 24 hours a day, 7 days a week.
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary btn-lg">
           <i data-lucide="zap"></i>
           Get My Free Lead Audit
         </a>
-        <a href="#engine" class="btn btn-ghost btn-lg">
-          See How It Works <i data-lucide="arrow-right"></i>
+        <a href="#" class="btn btn-ghost btn-lg" onclick="toggleChat(); return false;">
+          Talk to Vicki now <i data-lucide="arrow-right"></i>
         </a>
       </div>
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-num">$12K</span>
-          <span class="stat-label">Lost per month (avg contractor)</span>
+          <span class="stat-label">Lost per month avg contractor</span>
         </div>
-        <div class="stat-divider"></div>
         <div class="stat">
           <span class="stat-num">94%</span>
           <span class="stat-label">Leads answered instantly</span>
         </div>
-        <div class="stat-divider"></div>
         <div class="stat">
           <span class="stat-num">3×</span>
           <span class="stat-label">More booked estimates</span>
         </div>
+        <div class="stat">
+          <span class="stat-num">&lt;60s</span>
+          <span class="stat-label">Response time to every caller</span>
+        </div>
       </div>
     </div>
-    <div class="hero-scroll-hint">
-      <i data-lucide="chevron-down"></i>
-    </div>
   </section>
+
+  <!-- ░░ TICKER ░░ -->
+  <div id="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker-track">
+      <div class="ticker-item"><i data-lucide="phone-incoming"></i> <strong>Missed call recovery</strong> — texting back in under 60 seconds</div>
+      <div class="ticker-item"><i data-lucide="calendar-check"></i> <strong>Estimate booking</strong> — directly to your calendar</div>
+      <div class="ticker-item"><i data-lucide="message-square"></i> <strong>Lead qualification</strong> — budget, timeline, job type</div>
+      <div class="ticker-item"><i data-lucide="refresh-cw"></i> <strong>Follow-up sequences</strong> — chasing the 40% who don't reply first</div>
+      <div class="ticker-item"><i data-lucide="shield"></i> <strong>Private AI</strong> — your data never leaves our system</div>
+      <div class="ticker-item"><i data-lucide="clock"></i> <strong>24/7 coverage</strong> — weekends, holidays, 2am emergencies</div>
+      <!-- duplicate for seamless loop -->
+      <div class="ticker-item"><i data-lucide="phone-incoming"></i> <strong>Missed call recovery</strong> — texting back in under 60 seconds</div>
+      <div class="ticker-item"><i data-lucide="calendar-check"></i> <strong>Estimate booking</strong> — directly to your calendar</div>
+      <div class="ticker-item"><i data-lucide="message-square"></i> <strong>Lead qualification</strong> — budget, timeline, job type</div>
+      <div class="ticker-item"><i data-lucide="refresh-cw"></i> <strong>Follow-up sequences</strong> — chasing the 40% who don't reply first</div>
+      <div class="ticker-item"><i data-lucide="shield"></i> <strong>Private AI</strong> — your data never leaves our system</div>
+      <div class="ticker-item"><i data-lucide="clock"></i> <strong>24/7 coverage</strong> — weekends, holidays, 2am emergencies</div>
+    </div>
+  </div>
 
   <!-- ░░ PAIN BAR ░░ -->
   <section id="pain-bar">
-    <div class="container pain-inner">
-      <div class="pain-item">
-        <i data-lucide="phone-missed"></i>
-        <span>Missed call = missed job</span>
-      </div>
-      <div class="pain-item">
-        <i data-lucide="clock"></i>
-        <span>You're on the roof, not on the phone</span>
-      </div>
-      <div class="pain-item">
-        <i data-lucide="trending-down"></i>
-        <span>Competitors answer. You don't. They win.</span>
-      </div>
-      <div class="pain-item">
-        <i data-lucide="shield-off"></i>
-        <span>No AI should touch your customer data</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ░░ ENGINE SECTION ░░ -->
-  <section id="engine">
     <div class="container">
-      <div class="section-label">The ProspektrAI Engine</div>
-      <h2 class="section-title">Your AI runs <span class="text-gradient">on your hardware.</span><br>Not in someone else's cloud.</h2>
-      <p class="section-sub">Most AI tools send your customer data to third-party servers. Ours doesn't. We deploy a dedicated private AI system running locally — total data sovereignty, zero latency, no monthly API fees eating your margin.</p>
+      <div class="pain-grid">
+        <div class="pain-item reveal">
+          <div class="pain-icon"><i data-lucide="phone-missed"></i></div>
+          <h4>Missed call = missed job</h4>
+          <p>75% of callers won't leave a voicemail. If you don't answer, they call the next guy.</p>
+        </div>
+        <div class="pain-item reveal">
+          <div class="pain-icon"><i data-lucide="hard-hat"></i></div>
+          <h4>You can't answer on the roof</h4>
+          <p>You're on a job site, not at a desk. But your leads don't care — they need someone now.</p>
+        </div>
+        <div class="pain-item reveal">
+          <div class="pain-icon"><i data-lucide="timer"></i></div>
+          <h4>Speed wins the lead</h4>
+          <p>The odds of converting a lead drop 100× after 5 minutes. Vicki responds in under 60 seconds.</p>
+        </div>
+        <div class="pain-item reveal">
+          <div class="pain-icon"><i data-lucide="trending-down"></i></div>
+          <h4>40% of estimates go cold</h4>
+          <p>You send the quote and wait. Vicki follows up via SMS and email until they book or say no.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <div class="engine-grid">
-        <!-- Diagram -->
-        <div class="engine-diagram" id="engine-diagram">
-          <div class="diagram-node node-call" id="node-call">
-            <i data-lucide="phone-incoming"></i>
-            <span>Incoming Call</span>
+  <!-- ░░ ROI CALCULATOR ░░ -->
+  <section id="roi-calc">
+    <div class="container">
+      <div class="calc-wrapper reveal">
+        <div class="calc-header">
+          <div class="section-label">Revenue Leak Calculator</div>
+          <h2 class="section-title">How much are you actually losing?</h2>
+          <p style="color:var(--text-dim); font-size:1rem; line-height:1.6; max-width:580px;">
+            Drag the sliders to match your business. See your personal number — then decide if it's worth fixing.
+          </p>
+        </div>
+        <div class="calc-body">
+          <div class="calc-inputs">
+            <div class="calc-field">
+              <label>Average job value <span>(what a typical project pays you)</span></label>
+              <input type="range" class="calc-slider" id="calc-job" min="500" max="10000" step="250" value="2500">
+              <div class="calc-val-row">
+                <span>$500</span>
+                <span>$10,000</span>
+              </div>
+              <div class="calc-current-val" id="calc-job-display">$2,500</div>
+            </div>
+            <div class="calc-field">
+              <label>Missed calls per week <span>(calls that go to voicemail or ring out)</span></label>
+              <input type="range" class="calc-slider" id="calc-calls" min="1" max="25" step="1" value="5">
+              <div class="calc-val-row">
+                <span>1 call</span>
+                <span>25 calls</span>
+              </div>
+              <div class="calc-current-val" id="calc-calls-display">5 calls / week</div>
+            </div>
           </div>
-          <div class="diagram-arrow" id="arrow-1">
-            <div class="arrow-line"></div>
-            <i data-lucide="chevron-right"></i>
-          </div>
-          <div class="diagram-node node-ai" id="node-ai">
-            <i data-lucide="cpu"></i>
-            <span>Private AI</span>
-            <div class="node-badge">Private</div>
-          </div>
-          <div class="diagram-arrow" id="arrow-2">
-            <div class="arrow-line"></div>
-            <i data-lucide="chevron-right"></i>
-          </div>
-          <div class="diagram-node node-action" id="node-action">
-            <i data-lucide="calendar-check"></i>
-            <span>Lead Booked</span>
+          <div class="calc-result-pane">
+            <div class="result-label">You're losing every month</div>
+            <div class="result-amount" id="calc-monthly">$2,688</div>
+            <div class="result-annual">That's <strong id="calc-annual">$32,250</strong> per year walking out the door.</div>
+            <a href="#contact" class="btn btn-primary btn-lg">
+              <i data-lucide="zap"></i>
+              Stop the leak — get started
+            </a>
+            <p class="result-note">Based on 25% close rate on missed leads — industry average for home services contractors. Your actual number may be higher.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Features -->
-        <div class="engine-features">
-          <div class="engine-feature reveal">
-            <div class="ef-icon"><i data-lucide="lock"></i></div>
-            <div>
-              <h4>Total Data Privacy</h4>
-              <p>Your leads, your data. Never leaves your hardware.</p>
-            </div>
+  <!-- ░░ MEET VICKI ░░ -->
+  <section id="meet-vicki">
+    <div class="container">
+      <div class="vicki-grid">
+        <div class="vicki-left reveal">
+          <div class="vicki-avatar-wrap">V</div>
+          <div class="section-label">Your AI Office Manager</div>
+          <h2 class="section-title">Meet Vicki.</h2>
+          <p class="section-sub" style="margin-bottom:24px;">
+            Vicki isn't a chatbot. She's a trained AI that knows your business, speaks to your customers like a real office manager, and never calls in sick.
+          </p>
+          <div class="vicki-chips">
+            <div class="vicki-chip"><i data-lucide="phone"></i> Answers missed calls</div>
+            <div class="vicki-chip"><i data-lucide="message-circle"></i> Texts back in seconds</div>
+            <div class="vicki-chip"><i data-lucide="clipboard-check"></i> Qualifies every lead</div>
+            <div class="vicki-chip"><i data-lucide="calendar"></i> Books estimates</div>
+            <div class="vicki-chip"><i data-lucide="refresh-cw"></i> Follows up automatically</div>
+            <div class="vicki-chip"><i data-lucide="moon"></i> Works while you sleep</div>
           </div>
-          <div class="engine-feature reveal">
-            <div class="ef-icon"><i data-lucide="zap"></i></div>
-            <div>
-              <h4>Zero Latency</h4>
-              <p>Local inference means sub-second response to every caller.</p>
-            </div>
+          <div style="margin-top:32px;">
+            <a href="#" class="btn btn-outline" onclick="toggleChat(); return false;">
+              <i data-lucide="message-square"></i>
+              Talk to Vicki right now
+            </a>
           </div>
-          <div class="engine-feature reveal">
-            <div class="ef-icon"><i data-lucide="server"></i></div>
-            <div>
-              <h4>Always On</h4>
-              <p>Your AI runs 24/7. No cloud downtime. No outages.</p>
+        </div>
+        <div class="vicki-right reveal">
+          <div class="vicki-demo">
+            <div class="vicki-demo-header">
+              <div class="vicki-demo-av">V</div>
+              <div class="vicki-demo-info">
+                <div class="vicki-demo-name">Vicki — ProspektrAI</div>
+                <div class="vicki-demo-status"><span></span> Online now</div>
+              </div>
             </div>
-          </div>
-          <div class="engine-feature reveal">
-            <div class="ef-icon"><i data-lucide="dollar-sign"></i></div>
-            <div>
-              <h4>No API Fees</h4>
-              <p>Flat monthly rate. No per-call charges eating your margin.</p>
+            <div class="vicki-demo-msgs">
+              <div class="dmsg">
+                <div class="dmsg-av">V</div>
+                <div>
+                  <div class="dmsg-bubble">Hey Mike! 👋 I saw you just tried to call Chicago Pro Roofing — you reached Vicki, our AI office manager. Can I help you get a quote?</div>
+                  <div class="dmsg-time">Just now</div>
+                </div>
+              </div>
+              <div class="dmsg u">
+                <div class="dmsg-av">M</div>
+                <div>
+                  <div class="dmsg-bubble">Yeah I need a roof replacement quote. How soon can someone come out?</div>
+                </div>
+              </div>
+              <div class="dmsg">
+                <div class="dmsg-av">V</div>
+                <div>
+                  <div class="dmsg-bubble">Great timing — we have openings this week. Quick question: is this a full replacement or just repairs? And roughly how many squares are we talking?</div>
+                  <div class="dmsg-time">Just now</div>
+                </div>
+              </div>
+              <div class="dmsg u">
+                <div class="dmsg-av">M</div>
+                <div>
+                  <div class="dmsg-bubble">Full replacement. 2,400 sq ft house.</div>
+                </div>
+              </div>
+              <div class="dmsg">
+                <div class="dmsg-av">V</div>
+                <div>
+                  <div class="dmsg-bubble">Perfect. I've got Thursday at 2pm or Friday morning — which works better? I'll book it directly and send you a confirmation. 📅</div>
+                  <div class="dmsg-time">Just now</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -169,62 +254,184 @@
     </div>
   </section>
 
-  <!-- ░░ SERVICES ░░ -->
+  <!-- ░░ HOW IT WORKS ░░ -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-label">The Process</div>
+      <h2 class="section-title">Up and running <span class="text-gradient">in under a week.</span></h2>
+      <p class="section-sub">No tech skills required. We handle everything — you just show up to close.</p>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">Step 01</div>
+          <div class="step-icon"><i data-lucide="settings-2"></i></div>
+          <h3>We deploy in under a week</h3>
+          <p>We set up Vicki for your specific trade and service area, integrate with your calendar, and train her on your pricing and process. You don't touch a line of code.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">Step 02</div>
+          <div class="step-icon"><i data-lucide="phone-call"></i></div>
+          <h3>Vicki handles every missed call</h3>
+          <p>When a call goes unanswered, Vicki texts back within 60 seconds. She asks the right questions — job type, budget, timeline — and qualifies the lead before you even know they called.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">Step 03</div>
+          <div class="step-icon"><i data-lucide="briefcase"></i></div>
+          <h3>You show up to close</h3>
+          <p>Every estimate on your calendar is pre-qualified. You know the job type, budget, and when they want it done. No cold callbacks. No chasing. Just ready-to-buy leads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PROOF ░░ -->
+  <section id="proof">
+    <div class="container">
+      <div class="section-label">Industry Data</div>
+      <h2 class="section-title">The numbers don't lie.</h2>
+      <p class="section-sub">We're not making these up — these are published research figures that show exactly why missing calls is destroying contractor revenue.</p>
+      <div class="proof-stats">
+        <div class="proof-stat reveal">
+          <div class="proof-stat-num">75%</div>
+          <div class="proof-stat-label">Of callers won't leave a voicemail — they hang up and call the next contractor on the list.</div>
+          <div class="proof-stat-source">Source: Forbes, 2024</div>
+        </div>
+        <div class="proof-stat reveal">
+          <div class="proof-stat-num">100×</div>
+          <div class="proof-stat-label">Drop in lead conversion odds after just 5 minutes of no response. Speed is the only game that matters.</div>
+          <div class="proof-stat-source">Source: HBR / Velocify Study</div>
+        </div>
+        <div class="proof-stat reveal">
+          <div class="proof-stat-num">40%</div>
+          <div class="proof-stat-label">Of open estimates never get followed up on. That's nearly half your pipeline evaporating silently.</div>
+          <div class="proof-stat-source">Source: Contractor industry benchmark</div>
+        </div>
+        <div class="proof-stat reveal">
+          <div class="proof-stat-num">1.3×</div>
+          <div class="proof-stat-label">More likely to see revenue growth for contractors using AI vs. those who aren't. The gap is widening fast.</div>
+          <div class="proof-stat-source">Source: InfoTech Research Group</div>
+        </div>
+      </div>
+      <div class="proof-quote-card reveal">
+        <div class="proof-quote-text">
+          "The average home service contractor misses 6–8 calls per day. At a $2,500 average job value and a 30% close rate, that's $14,000–$19,000 in monthly revenue that never gets a chance to close."
+        </div>
+        <div class="proof-quote-cite">— ProspektrAI internal analysis based on contractor industry benchmarks</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FOUNDING CONTRACTOR ░░ -->
+  <section id="founding">
+    <div class="container">
+      <div class="founding-wrap reveal">
+        <div class="founding-inner">
+          <div>
+            <div class="founding-badge-pill">
+              <i data-lucide="star" style="width:11px;height:11px;"></i>
+              Chicago Metro — Limited Offer
+            </div>
+            <h2 class="section-title">Become a<br><span class="text-gradient">Founding Contractor.</span></h2>
+            <p style="color:var(--text-dim); font-size:1rem; line-height:1.75; max-width:480px;">
+              We're selecting our first 10 contractors in the Chicago area. You get Vicki set up at zero cost, locked pricing for life, and our full attention — in exchange for being first in your market.
+            </p>
+            <div class="founding-perks">
+              <div class="founding-perk">
+                <div class="fp-icon"><i data-lucide="check"></i></div>
+                <span><strong>$0 setup fee</strong> — saves you $499 to $1,499 depending on plan</span>
+              </div>
+              <div class="founding-perk">
+                <div class="fp-icon"><i data-lucide="lock"></i></div>
+                <span><strong>Rate locked for life</strong> — your monthly price never increases</span>
+              </div>
+              <div class="founding-perk">
+                <div class="fp-icon"><i data-lucide="shield"></i></div>
+                <span><strong>Market exclusivity</strong> — we won't onboard a direct competitor in your zip code</span>
+              </div>
+              <div class="founding-perk">
+                <div class="fp-icon"><i data-lucide="headphones"></i></div>
+                <span><strong>Direct line to our team</strong> — you're not a ticket number</span>
+              </div>
+            </div>
+            <div style="margin-top:36px;">
+              <a href="#contact" class="btn btn-primary btn-lg">
+                <i data-lucide="zap"></i>
+                Claim My Founding Spot
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="spots-box">
+              <div class="spots-num">7</div>
+              <div class="spots-subtitle">founding spots remaining<br>in the Chicago metro</div>
+              <div class="spots-bar-track">
+                <div class="spots-bar-fill"></div>
+              </div>
+              <div class="spots-bar-labels">
+                <span>3 of 10 claimed</span>
+                <span>7 left</span>
+              </div>
+              <a href="#contact" class="btn btn-primary btn-full">
+                Claim My Spot
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PRICING ░░ -->
   <section id="services">
     <div class="container">
       <div class="section-label">Pricing</div>
-      <h2 class="section-title">Pick your <span class="text-gradient">weapon.</span></h2>
-      <p class="section-sub">Every plan includes setup, full AI deployment, and Vicki — your dedicated AI Ops Manager.</p>
-
+      <h2 class="section-title">Pick your <span class="text-gradient">plan.</span></h2>
+      <p class="section-sub">Every plan includes Vicki, full setup, and unlimited leads. No per-call fees. No surprises.</p>
       <div class="cards-grid">
 
-        <!-- Card 1 -->
         <div class="price-card reveal">
           <div class="card-icon"><i data-lucide="phone-call"></i></div>
           <h3>Missed Call Recovery</h3>
-          <div class="card-price">$299.99<span>/mo</span></div>
-          <div class="card-setup">+ $499 one-time setup</div>
-          <p class="card-desc">Never lose a lead to voicemail again. Vicki texts back every missed call within seconds and qualifies the lead automatically.</p>
+          <div class="card-price">$299<span>/mo</span></div>
+          <div class="card-setup">+ $499 setup · Best for under $25K/mo revenue</div>
+          <p class="card-desc">Vicki texts back every missed call within 60 seconds, qualifies the lead, and routes them to you. Never lose a job to voicemail again.</p>
           <ul class="card-features">
-            <li><i data-lucide="check"></i> Business line porting</li>
-            <li><i data-lucide="check"></i> SMS-back engine setup</li>
-            <li><i data-lucide="check"></i> Notification triggers</li>
-            <li><i data-lucide="check"></i> Lead qualification</li>
-            <li><i data-lucide="check"></i> Weekly report</li>
+            <li><i data-lucide="check"></i> Missed call SMS response engine</li>
+            <li><i data-lucide="check"></i> Lead qualification (budget, timeline, job type)</li>
+            <li><i data-lucide="check"></i> Instant Slack / phone notifications</li>
+            <li><i data-lucide="check"></i> Weekly performance report</li>
+            <li><i data-lucide="check"></i> Full setup & onboarding included</li>
           </ul>
           <a href="#contact" class="btn btn-outline btn-full">Get Started</a>
         </div>
 
-        <!-- Card 2 — Featured -->
         <div class="price-card card-featured reveal">
           <div class="card-badge">Most Popular</div>
           <div class="card-icon"><i data-lucide="headphones"></i></div>
           <h3>24/7 Digital Dispatch</h3>
-          <div class="card-price">$599.99<span>/mo</span></div>
-          <div class="card-setup">+ $999 one-time setup</div>
-          <p class="card-desc">Full-time AI dispatcher. Deep CRM integration, calendar syncing, and custom Vicki voice training — while you're on the job.</p>
+          <div class="card-price">$599<span>/mo</span></div>
+          <div class="card-setup">+ $999 setup · Best for $25K–$75K/mo revenue</div>
+          <p class="card-desc">Full AI dispatcher with calendar integration. Vicki qualifies leads, books estimates, and manages your schedule — while you're on the job.</p>
           <ul class="card-features">
-            <li><i data-lucide="check"></i> Everything in Recovery</li>
-            <li><i data-lucide="check"></i> ServiceTitan / Housecall Pro integration</li>
-            <li><i data-lucide="check"></i> Calendar booking</li>
-            <li><i data-lucide="check"></i> Custom Vicki voice training</li>
+            <li><i data-lucide="check"></i> Everything in Missed Call Recovery</li>
+            <li><i data-lucide="check"></i> Direct calendar booking</li>
+            <li><i data-lucide="check"></i> CRM integration (ServiceTitan, Housecall Pro)</li>
+            <li><i data-lucide="check"></i> Custom Vicki training for your trade</li>
             <li><i data-lucide="check"></i> Priority support</li>
           </ul>
           <a href="#contact" class="btn btn-primary btn-full">Get Started</a>
         </div>
 
-        <!-- Card 3 -->
         <div class="price-card reveal">
           <div class="card-icon"><i data-lucide="trending-up"></i></div>
-          <h3>Automated Quote Follow-Up</h3>
-          <div class="card-price">$999.99<span>/mo</span></div>
-          <div class="card-setup">+ $1,499 one-time setup</div>
-          <p class="card-desc">Most contractors leave 40% of open estimates on the table. Vicki follows up via SMS and email automatically until they book or say no.</p>
+          <h3>Full Growth Engine</h3>
+          <div class="card-price">$999<span>/mo</span></div>
+          <div class="card-setup">+ $1,499 setup · Best for $75K+/mo revenue</div>
+          <p class="card-desc">The complete system: missed call recovery, estimate follow-up sequences, and a dedicated account manager who optimizes your pipeline monthly.</p>
           <ul class="card-features">
-            <li><i data-lucide="check"></i> Everything in Dispatch</li>
-            <li><i data-lucide="check"></i> Full database ingestion</li>
-            <li><i data-lucide="check"></i> SMS + Email nurture sequences</li>
-            <li><i data-lucide="check"></i> Guardian health monitoring</li>
+            <li><i data-lucide="check"></i> Everything in Digital Dispatch</li>
+            <li><i data-lucide="check"></i> Automated estimate follow-up (SMS + email)</li>
+            <li><i data-lucide="check"></i> Full lead database ingestion</li>
+            <li><i data-lucide="check"></i> System health monitoring (Guardian)</li>
             <li><i data-lucide="check"></i> Dedicated account manager</li>
           </ul>
           <a href="#contact" class="btn btn-outline btn-full">Get Started</a>
@@ -234,64 +441,115 @@
     </div>
   </section>
 
-  <!-- ░░ SOCIAL PROOF ░░ -->
-  <section id="proof">
+  <!-- ░░ FAQ ░░ -->
+  <section id="faq">
     <div class="container">
-      <div class="section-label">Results</div>
-      <h2 class="section-title">Contractors who <span class="text-gradient">stopped missing calls.</span></h2>
-      <div class="proof-grid">
-        <div class="proof-card reveal">
-          <div class="proof-stars">★★★★★</div>
-          <p>"Within the first week Vicki booked 4 estimates I would have never gotten. The ROI was immediate."</p>
-          <div class="proof-author">
-            <div class="proof-avatar">M</div>
-            <div>
-              <strong>Mike R.</strong>
-              <span>Naperville Roofing Co.</span>
-            </div>
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Questions contractors ask<br>before they sign up.</h2>
+      <div class="faq-list">
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>Does Vicki actually sound like a real person?</span>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            Vicki communicates over SMS and chat — she doesn't call people back. Text-based responses are actually better for lead conversion because customers can reply when it's convenient. Her messages are written to feel natural and on-brand, not robotic.
           </div>
         </div>
-        <div class="proof-card reveal">
-          <div class="proof-stars">★★★★★</div>
-          <p>"I was skeptical about AI but the fact that it runs on our own machine sealed it. Customer data stays with us."</p>
-          <div class="proof-author">
-            <div class="proof-avatar">D</div>
-            <div>
-              <strong>Dave K.</strong>
-              <span>Midwest HVAC Services</span>
-            </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>What if a lead asks something Vicki can't answer?</span>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            She's trained on your specific trade and pricing. If something comes up that's outside her scope, she tells the lead that someone from your team will follow up directly — and alerts you immediately via Slack or SMS so you can step in.
           </div>
         </div>
-        <div class="proof-card reveal">
-          <div class="proof-stars">★★★★★</div>
-          <p>"We used to lose at least 3 leads a day to voicemail. Now Vicki handles them all. Best $599 I spend every month."</p>
-          <div class="proof-author">
-            <div class="proof-avatar">T</div>
-            <div>
-              <strong>Tony S.</strong>
-              <span>Chicago Pro Plumbing</span>
-            </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>How long does setup take?</span>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            Under a week. We handle everything — business line porting, Vicki training, calendar integration, and testing. You don't need any technical skills or software experience. Once it's live, it runs automatically.
           </div>
         </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>What happens to my customer data?</span>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            Your lead data stays in our secured system — it is never sold, shared, or sent to third-party AI providers. We run our AI locally, not through OpenAI or any external cloud service.
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>Will this work for my trade?</span>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            We currently work with HVAC, roofing, plumbing, electrical, and general contractors. If your trade isn't listed, contact us — we've onboarded businesses across 18 service categories and can likely train Vicki for your specific workflow.
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>What if I already have a receptionist?</span>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            Vicki handles after-hours, overflow calls, and the leads your receptionist misses when they're busy. She works 24/7 — your receptionist doesn't. They complement each other, and most clients find they need fewer hours from human staff within 60 days.
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>Is there a contract or can I cancel anytime?</span>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            Month-to-month. No long-term contracts. You can cancel anytime with 30 days notice. We're confident the results speak for themselves — we don't need to lock you in.
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>How is this different from hiring a VA or answering service?</span>
+            <i data-lucide="chevron-down"></i>
+          </div>
+          <div class="faq-a">
+            A VA costs $1,500–$3,000/month and works set hours. An answering service takes messages. Vicki responds in under 60 seconds, 24/7, qualifies leads, books appointments, AND follows up on cold estimates — for a fraction of the cost. She also never quits.
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ░░ CONTACT / AUDIT FORM ░░ -->
+  <!-- ░░ CONTACT ░░ -->
   <section id="contact">
     <div class="container">
       <div class="contact-inner">
         <div class="contact-left reveal">
           <div class="section-label">Free Lead Audit</div>
           <h2 class="section-title">Find out exactly how<br><span class="text-gradient">much you're losing.</span></h2>
-          <p class="section-sub">We'll analyze your current call volume, missed call rate, and average job value — then show you the exact dollar amount leaking out of your business every month.</p>
+          <p class="section-sub" style="margin-bottom:16px;">
+            We'll analyze your call volume, missed call rate, and average job value — then show you the exact dollar amount leaving your business every month.
+          </p>
           <ul class="audit-perks">
             <li><i data-lucide="check-circle"></i> No cost, no obligation</li>
-            <li><i data-lucide="check-circle"></i> Results in 24 hours</li>
-            <li><i data-lucide="check-circle"></i> Custom AI deployment plan</li>
+            <li><i data-lucide="check-circle"></i> Results delivered within 24 hours</li>
+            <li><i data-lucide="check-circle"></i> Custom Vicki deployment plan for your trade</li>
+            <li><i data-lucide="check-circle"></i> Founding contractor pricing if you qualify</li>
           </ul>
         </div>
-        <div class="contact-right reveal">
+        <div class="contact-right">
           <form id="audit-form" class="audit-form" novalidate>
             <div class="form-group">
               <label for="f-name">Your Name</label>
@@ -312,11 +570,14 @@
                 <option value="Roofing">Roofing</option>
                 <option value="HVAC">HVAC</option>
                 <option value="Plumbing">Plumbing</option>
+                <option value="Electrical">Electrical</option>
+                <option value="General Contracting">General Contracting</option>
+                <option value="Painting">Painting</option>
                 <option value="Other">Other</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="f-revenue">Estimated Monthly Revenue</label>
+              <label for="f-revenue">Monthly Revenue (approx.)</label>
               <select id="f-revenue" required>
                 <option value="" disabled selected>Select range</option>
                 <option value="Under $25K">Under $25K</option>
@@ -329,11 +590,11 @@
               <i data-lucide="zap"></i>
               <span>Get My Free Audit</span>
             </button>
-            <p class="form-note">We'll reach out within 24 hours. No spam, ever.</p>
+            <p class="form-note">We'll reach out within 24 hours. No spam, no sales calls unless you want one.</p>
           </form>
           <div id="form-success" class="form-success hidden">
             <div class="success-icon"><i data-lucide="check-circle"></i></div>
-            <h3>You're locked in! 🔥</h3>
+            <h3>You're locked in.</h3>
             <p>Vicki has your info. Expect a custom audit in your inbox within 24 hours.</p>
           </div>
         </div>
@@ -346,24 +607,32 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="#" class="nav-logo">Prospektr<span>AI</span></a>
-        <p>AI Automation for Contractors.<br>Chicago, IL</p>
+        <p>AI automation for home service contractors.<br>Chicago, IL — serving contractors nationwide.</p>
         <a href="mailto:vicki@prospektrai.com" class="footer-email">vicki@prospektrai.com</a>
       </div>
-      <div class="footer-links">
-        <a href="#engine">The Engine</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Get Audit</a>
+      <div class="footer-col">
+        <h5>Product</h5>
+        <a href="#meet-vicki">Meet Vicki</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#services">Pricing</a>
+        <a href="/onepager">One-Pager</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#founding">Founding Contractor</a>
+        <a href="#contact">Get Free Audit</a>
+        <a href="mailto:vicki@prospektrai.com">Contact Us</a>
+        <a href="https://calendar.app.google/F2374c6RxJxEpo9o9" target="_blank">Book a Call</a>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="container footer-bottom">
       <p>© 2026 ProspektrAI. All rights reserved.</p>
+      <p>Built to help contractors win.</p>
     </div>
   </footer>
 
   <!-- ░░ CHAT WIDGET ░░ -->
   <div id="chat-widget">
-
-    <!-- Bubble Trigger -->
     <div id="chat-bubble" onclick="toggleChat()" aria-label="Open chat">
       <div id="bubble-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -377,17 +646,11 @@
       </div>
       <div id="notification-dot"></div>
     </div>
-
-    <!-- Proactive Teaser (shows before opening) -->
     <div id="chat-teaser" onclick="toggleChat()">
-      <span>👋 Did you know the average roofer loses $2,500/week in missed calls?</span>
+      <span>👋 Losing leads to voicemail? Talk to Vicki — she'll show you how to fix it.</span>
       <button id="teaser-close" onclick="closeTeaser(event)">×</button>
     </div>
-
-    <!-- Chat Panel -->
     <div id="chat-panel">
-
-      <!-- Header -->
       <div id="chat-header">
         <div id="header-left">
           <div id="avatar">V</div>
@@ -402,37 +665,24 @@
           </svg>
         </button>
       </div>
-
-      <!-- Messages -->
       <div id="chat-messages"></div>
-
-      <!-- Success Overlay -->
       <div id="success-overlay">
         <div id="success-content">
           <div id="success-check">
-            <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="25" fill="none"/><path fill="none" d="M14 27l8 8 16-16"/></svg>
+            <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="25"/><path d="M14 27l8 8 16-16"/></svg>
           </div>
-          <h3>You're locked in! 🔥</h3>
-          <p>Vicki has your info. We'll reach out within 24 hours with a custom demo.</p>
+          <h3>You're locked in!</h3>
+          <p>Vicki has your info. We'll reach out within 24 hours.</p>
         </div>
       </div>
-
-      <!-- Input Area -->
       <div id="chat-input-area">
-        <input
-          id="chat-input"
-          type="text"
-          placeholder="Type a message..."
-          autocomplete="off"
-          onkeydown="handleKey(event)"
-        />
+        <input id="chat-input" type="text" placeholder="Type a message..." autocomplete="off" onkeydown="handleKey(event)" />
         <button id="send-btn" onclick="sendMessage()" aria-label="Send">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
           </svg>
         </button>
       </div>
-
     </div>
   </div>
 
