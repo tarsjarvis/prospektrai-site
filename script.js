@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   lucide.createIcons();
   initNavbar();
   initReveal();
+  initCountUp();
+  initSpotsBar();
   initROICalc();
   initForm();
   loadFromStorage();
@@ -56,6 +58,67 @@ function initReveal() {
     });
   }, { threshold: 0.1 });
   els.forEach(el => observer.observe(el));
+}
+
+// ─── Count-Up Animation ───────────────────────
+function initCountUp() {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const els = document.querySelectorAll('[data-countup]');
+  if (!els.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      if (prefersReduced) return; // leave static text
+      animateCountUp(entry.target);
+    });
+  }, { threshold: 0.6 });
+
+  els.forEach(el => observer.observe(el));
+}
+
+function animateCountUp(el) {
+  const target  = parseFloat(el.getAttribute('data-countup'));
+  const prefix  = el.getAttribute('data-prefix') || '';
+  const suffix  = el.getAttribute('data-suffix') || '';
+  const isFloat = !Number.isInteger(target);
+  const duration = 1400;
+  const startTime = performance.now();
+
+  function tick(now) {
+    const elapsed  = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const current  = target * eased;
+
+    el.textContent = prefix + (isFloat ? current.toFixed(1) : Math.round(current).toLocaleString()) + suffix;
+
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      el.textContent = prefix + (isFloat ? target.toFixed(1) : target.toLocaleString()) + suffix;
+    }
+  }
+
+  requestAnimationFrame(tick);
+}
+
+// ─── Spots Bar Animation ──────────────────────
+function initSpotsBar() {
+  const bar = document.querySelector('.spots-bar-fill');
+  if (!bar) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      // Slight delay so the card finishes revealing first
+      setTimeout(() => { bar.style.width = '30%'; }, 300);
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(bar);
 }
 
 // ─── ROI Calculator ────────────────────────────
@@ -114,6 +177,7 @@ function initForm() {
     const name     = document.getElementById('f-name');
     const business = document.getElementById('f-business');
     const email    = document.getElementById('f-email');
+    const phone    = document.getElementById('f-phone');
     const trade    = document.getElementById('f-trade');
     const revenue  = document.getElementById('f-revenue');
 
@@ -132,6 +196,7 @@ function initForm() {
       name:      name.value.trim(),
       business:  business.value.trim(),
       email:     email.value.trim(),
+      phone:     phone ? phone.value.trim() : '',
       trade:     trade.value,
       revenue:   revenue.value,
       source:    'prospektrai.com',
