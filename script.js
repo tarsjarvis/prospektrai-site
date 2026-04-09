@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (chatState.messages.length > 0) {
     hideTeaser();
     renderAllMessages();
-    if (chatState.stage === 'chat') enableInput();
+    if (['ask_name', 'ask_contact', 'chat'].includes(chatState.stage)) enableInput();
   } else {
     chatState.sessionId = crypto.randomUUID();
     setTimeout(showTeaser, 4000);
@@ -248,7 +248,7 @@ window.toggleChat = function () {
   closeI.style.display = chatState.open ? 'flex' : 'none';
   hideTeaser();
 
-  if (chatState.open && chatState.stage === 'idle') {
+  if (chatState.open && (chatState.stage === 'idle' || chatState.stage === 'greeting')) {
     chatState.stage = 'greeting';
     startConversation();
   }
@@ -363,9 +363,12 @@ async function askVicki(message) {
   const typingId = showTyping();
 
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
     const res = await fetch(CHAT_WEBHOOK_URL, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
+      signal:  controller.signal,
       body: JSON.stringify({
         event:        'chat_message',
         sessionId:    chatState.sessionId,
@@ -375,6 +378,7 @@ async function askVicki(message) {
         timestamp:    new Date().toISOString()
       })
     });
+    clearTimeout(timeout);
 
     removeTyping(typingId);
     if (res.ok) {
@@ -386,7 +390,7 @@ async function askVicki(message) {
     }
   } catch {
     removeTyping(typingId);
-    addBotMessage("Quick brain glitch on my end — try that again? 😅");
+    addBotMessage("I'm thinking — give me one moment, or <a href='/#contact' style='color:var(--amber)'>book your free audit here</a>. 🗓️");
   }
 
   enableInput();
