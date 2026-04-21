@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/privacy",   "destination": "/privacy.html" },
+    { "source": "/terms",     "destination": "/terms.html" },
     { "source": "/onepager", "destination": "/onepager.html" },
     { "source": "/hvac",       "destination": "/hvac.html" },
     { "source": "/roofing",    "destination": "/roofing.html" },
